@@ -30,9 +30,21 @@
         }
     </style>
 
-    <audio src = "09.Of Monsters And Men - Stuck In Gravity (Lyrics).mp3" autoplay controls>
-    
-    </audio>> 
+<audio id="meuAudio" src="09.Of Monsters And Men - Stuck In Gravity (Lyrics).mp3" controls></audio>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const audio = document.getElementById('meuAudio');
+        const tempoFinal = 261; // 4 minutos em segundos
+
+        audio.addEventListener('timeupdate', function() {
+            if (audio.currentTime >= tempoFinal) {
+                audio.pause();
+                audio.currentTime = 0; // Volta para o início
+            }
+        });
+    });
+</script>
 
 
     
